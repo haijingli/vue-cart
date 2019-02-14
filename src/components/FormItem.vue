@@ -35,6 +35,19 @@ export default {
     if (this.prop) {
       //此处的$parent不够灵活，如果使用组件时在FormItem外面套了一层div的话，this.$parent就不是Form了，需要处理
       this.$parent.$emit("addFormItem", this);
+
+      // form() {
+      //   let parent = this.$parent;
+      //   let parentName = parent.$options.componentName;
+      //   while (parentName !== 'ElForm') {
+      //     if (parentName === 'ElFormItem') {
+      //       this.isNested = true;
+      //     }
+      //     parent = parent.$parent;
+      //     parentName = parent.$options.componentName;
+      //   }
+      //   return parent;
+      // }
     }
   },
   methods: {
